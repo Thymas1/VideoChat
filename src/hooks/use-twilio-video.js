@@ -98,7 +98,7 @@ const useTwilioVideo = () => {
     const room = await connect(state.token, {
       name: state.roomName,
       audio: true,
-      video: { width: 640 },
+      video: { width: 320 },
       logLevel: "info",
     }).catch(error => {
       console.error("something went wrong", error.message)
@@ -107,9 +107,14 @@ const useTwilioVideo = () => {
     const localTrack = [...room.localParticipant.videoTracks.values()][0].track
 
     if (!videoRef.current.hasChildNodes()) {
+			const LocalName = document.createElement("h4")
+			const LocalDiv = document.createElement("div")
+			LocalName.innerText = "Meg"
+			LocalDiv.appendChild(LocalName)
       const localEl = localTrack.attach()
+			LocalDiv.appendChild(localEl)
 
-      videoRef.current.appendChild(localEl)
+      videoRef.current.appendChild(LocalDiv)
     }
 
     const handleParticipant = participant => {

@@ -24,7 +24,6 @@ const Join = ({ location }) => {
 
   return (
     <Wrapper>
-      <pre>{JSON.stringify(state, null, 2)}</pre>
       <Form onSubmit={handleSumbit}>
         <H1>Start or join a video call</H1>
         <StyledLabel>DISPLAY NAME:</StyledLabel>
