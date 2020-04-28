@@ -38,7 +38,7 @@ display: grid;
     margin: 10px;
     grid-template-areas: " . . . ." " . . . ." " . . . .";
   padding: 10px;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 500px) {
     display: flex;
     flex-direction: column;
   }
