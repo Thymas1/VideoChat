@@ -7,7 +7,7 @@ import "./layout.css"
 const Layout = ({ children }) => (
   <>
     <Header>
-      <StyledLink to="/">Video Chat App</StyledLink>
+      <StyledLink to="/">Video Chat</StyledLink>
     </Header>
     <main>{children}</main>
   </>

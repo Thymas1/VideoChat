@@ -26,7 +26,7 @@ const Join = ({ location }) => {
     <Wrapper>
       <Form onSubmit={handleSumbit}>
         <H1>Start or join a video call</H1>
-        <StyledLabel>DISPLAY NAME:</StyledLabel>
+        <StyledLabel>Display name:</StyledLabel>
         <StyledInput
           type={"text"}
           id="identity"
@@ -49,7 +49,7 @@ export default Join
 
 const Form = styled.form`
   margin-top: 100px;
-  font-family: Courier;
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   width: 30rem;
@@ -76,6 +76,7 @@ const Button = styled.button`
   color: white;
 `
 const H1 = styled.h1`
+  font-family: sans-serif;
   justify-self: center;
   font-size: 25px;
   font-weight: bold;
