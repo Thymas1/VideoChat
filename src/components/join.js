@@ -9,17 +9,26 @@ const Join = ({ location }) => {
   const { state, getRoomToken } = useTwilioVideo()
   const [identity, setIdentity] = useState(defaultRoom)
   const [roomName, setRoomName] = useState(defaultRoom)
+  const [error, setError] = useState(false)
 
-	useEffect(() => {
-		if(state.token && state.roomName){
-			navigate(`/room/${state.roomName}`)
-		}
-	}, [state])
+  useEffect(() => {
+    if (state.token && state.roomName) {
+      navigate(`/room/${state.roomName}`)
+    }
+  }, [state])
 
   const handleSumbit = event => {
     event.preventDefault()
 
     getRoomToken({ identity, roomName })
+  }
+  const handleClick = () => {
+    console.log(state.identity)
+    if (!error && state.identity === "") {
+      setError(true)
+    } else {
+      setError(false)
+    }
   }
 
   return (
@@ -31,6 +40,7 @@ const Join = ({ location }) => {
           type={"text"}
           id="identity"
           value={identity}
+          placeholder={"What should we call you?"}
           onChange={event => setIdentity(event.target.value)}
         />
         <StyledLabel>What room do you want to join?</StyledLabel>
@@ -38,9 +48,18 @@ const Join = ({ location }) => {
           type={"text"}
           id="roomName"
           value={roomName}
+          placeholder={"Name of room"}
           onChange={event => setRoomName(event.target.value)}
         />
-        <Button type="submit"> join video chat</Button>
+        <Button type="submit" onClick={() => handleClick()}>
+          {" "}
+          join video chat
+        </Button>
+        {error && (
+          <Error>
+            <p>Please type in your Screenname and room</p>
+          </Error>
+        )}
       </Form>
     </Wrapper>
   )
@@ -53,7 +72,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 30rem;
-  padding-top: 20px;
   justify-content: center;
   border: 0.5px solid lightgrey;
   padding: 20px;
@@ -62,6 +80,7 @@ const Form = styled.form`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  color: white;
 `
 const StyledLabel = styled.label`
   display: block;
@@ -80,4 +99,13 @@ const H1 = styled.h1`
   justify-self: center;
   font-size: 25px;
   font-weight: bold;
+`
+const Error = styled.div`
+  width: 100%;
+  background-color: red;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: auto;
+  text-align: center;
 `
