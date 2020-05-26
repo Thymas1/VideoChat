@@ -69,10 +69,13 @@ const Form = styled.form`
   flex-direction: column;
   width: 30rem;
   justify-content: center;
-  border-radius: 10px;
   padding: 20px;
   border: 0.5px solid darkgray;
   background-color: white;
+  border-radius: 0;
+  @media (min-width: 400px) {
+    border-radius: 10px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -86,7 +89,6 @@ const StyledLabel = styled.label`
 `
 const StyledInput = styled.input`
   text-align: center;
-  border-radius: 0;
   margin-bottom: 10px;
   border: 0;
   border-bottom: 0.5px solid #26262b;
