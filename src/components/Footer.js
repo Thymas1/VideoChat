@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Footer = () => {
 	return (
 		<Div>
-			<span>Made by Thomas Johan Endresen,
+			<span>Made by Endresen-it tjenester,
 			all rights reserved</span>
 		</Div>
 	)
