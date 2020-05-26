@@ -55,11 +55,7 @@ const Join = ({ location }) => {
           {" "}
           join video chat
         </Button>
-        {error && (
-          <Error>
-            <p>Please type in your Screenname and room</p>
-          </Error>
-        )}
+        {error && <P>*Please type in your Screenname and room</P>}
       </Form>
     </Wrapper>
   )
@@ -73,26 +69,46 @@ const Form = styled.form`
   flex-direction: column;
   width: 30rem;
   justify-content: center;
-  border: 0.5px solid lightgrey;
+  border-radius: 10px;
   padding: 20px;
+  border: 0.5px solid darkgray;
+  background-color: white;
 `
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  color: white;
+  color: #26262b;
 `
 const StyledLabel = styled.label`
   display: block;
   font-weight: bold;
 `
 const StyledInput = styled.input`
+  text-align: center;
   border-radius: 0;
   margin-bottom: 10px;
+  border: 0;
+  border-bottom: 0.5px solid #26262b;
+  color: #26262b;
+  font-weight: bold;
+  height: 30px;
+  font-size: 25px;
+
+  :focus {
+    border: 0;
+  }
 `
 const Button = styled.button`
-  background-color: #15118b;
+  background-color: rgba(38, 38, 43, 0.63);
+  border: 0;
   color: white;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  :hover {
+    background-color: #26262b;
+  }
 `
 const H1 = styled.h1`
   font-family: sans-serif;
@@ -100,12 +116,9 @@ const H1 = styled.h1`
   font-size: 25px;
   font-weight: bold;
 `
-const Error = styled.div`
-  width: 100%;
-  background-color: red;
-  border-radius: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  height: auto;
+const P = styled.p`
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  color: red;
 `
