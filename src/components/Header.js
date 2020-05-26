@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const Header = () => {
   return (
     <Wrapper>
-      <StyledLink to="/">Video Chat</StyledLink>
+      <StyledLink to="/">EndrChat</StyledLink>
     </Wrapper>
   )
 }
