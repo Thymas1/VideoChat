@@ -15,7 +15,8 @@ const Wrapper = styled.header`
   color: white;
   height: 100px;
   padding: 10px;
-  margin-top:5px;
+  margin-top: 5px;
+  display: flex;
 `
 
 const StyledLink = styled(Link)`
@@ -27,3 +28,4 @@ const StyledLink = styled(Link)`
 `
 
 export default Header
+

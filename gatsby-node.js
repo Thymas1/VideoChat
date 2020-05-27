@@ -4,3 +4,9 @@ exports.onCreatePage = ({ page, actions }) => {
     actions.createPage(page)
   }
 }
+exports.CreatePage = ({ page, actions }) => {
+	if (page.path.match(/^\/video/)) {
+		page.matchPath = `/video/*`
+		actions.createPage(page)
+	}
+}
